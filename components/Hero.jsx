@@ -2,7 +2,7 @@
 
 import React from "react";
 import Navbar from "./Navbar";
-import { Modal } from "./ui/popup-modal"; // Corrected import
+import Popup from "./ui/popup-modal";
 
 const Hero = () => {
   return (
@@ -13,7 +13,7 @@ const Hero = () => {
         underlineStyles="absolute left-0 top-full h-[2px] bg-primary w-full"
       />
       <h1>Other components</h1>
-      <Modal /> {/* Changed Popup to Modal */}
+      <Popup/>
     </div>
   );
 };
