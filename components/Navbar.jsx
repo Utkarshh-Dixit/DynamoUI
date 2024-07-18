@@ -7,12 +7,11 @@ import { motion } from "framer-motion";
 import Button from "./smallComponents/Button";
 
 const links = [
-  { path: "/", name: "🏠︎" },
-  { path: "/about", name: "★" },
-  { path: "/contact", name: "฿" },
-  { path: "/contact", name: "❆" },
-  { path: "/contact", name: "♡" },
-  { path: "/contact", name: "♫" },
+  { path: "/", name: "Home" },
+  { path: "/about", name: "About" },
+  { path: "/contact", name: "Components" },
+  { path: "/contact", name: "Templates" },
+  { path: "/contact", name: "Pricing" },
 ];
 
 const Navbar = ({ containerStyles, linkStyles, underlineStyles }) => {
@@ -43,15 +42,15 @@ const Navbar = ({ containerStyles, linkStyles, underlineStyles }) => {
           const isRight = hoveredIndex === index + 1;
 
           let color = "";
-          let textSize = "text-3xl";
+          let scaleClass = "";
           let pad = "6";
           if (isHovered) {
-            color = "text-pink-400";
+            color = "text-red-400";
             pad = "1";
-            textSize = "text-6xl";
+            scaleClass = "scale-125";
           } else if (isLeft || isRight) {
-            color = "text-pink-300";
-            textSize = "text-4xl";
+            color = "text-blue-300";
+            scaleClass = "scale-110";
             pad = "3";
           }
 
@@ -59,7 +58,7 @@ const Navbar = ({ containerStyles, linkStyles, underlineStyles }) => {
             <Link
               href={link.path}
               key={index}
-              className={`capitalize px-5 transition-all ${textSize} duration-400 ${color} transform py-${pad}`}
+              className={`capitalize hover:bg-black hover:rounded-full hover:text-white px-5 mx-3 transition-all ${scaleClass} duration-400 ${color} transform py-${pad}`}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             >
@@ -72,7 +71,7 @@ const Navbar = ({ containerStyles, linkStyles, underlineStyles }) => {
       <Button
         label="Browse Components ➤"
         onClick={handleOnClick}
-        style="my-5 p-3 border-2 border-red rounded-full absolute right-0 transform transition-all duration-500 hover:scale-110 hover:bg-blue-300"
+        style="my-5 mx-5 p-3 border-2 border-red rounded-full absolute right-0 transform transition-all duration-500 hover:scale-110 hover:bg-blue-300"
       ></Button>
     </nav>
   );
